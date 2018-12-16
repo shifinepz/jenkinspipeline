@@ -22,10 +22,9 @@ pipeline{
 				sh '''sudo cp /opt/Devops/java/cacheImplement-2.4-SNAPSHOT.war /var/lib/tomcat/webapps/
 				sudo systemctl restart tomcat
 				sudo systemctl status tomcat.service'''
-			}
-			steps {
+			
 			input('Access tomcat port 80 and click proceed !')
-        	}
+			}
 		}
 		stage("redeploy webapp to port 8080"){
 			steps{
